@@ -1,0 +1,77 @@
+# -- coding: utf-8 -
+"""
+@file       :wirelessrecommend_recommend.txt
+@Author     :wooght
+@Date       :2024/09/28 18:52
+"""
+
+mtop.relationrecommend.wirelessrecommend.recommend
+
+详情页返回列表/搜索页主动访问:
+Request POST:
+        返回搜索列表页时主动嗲用:
+       第一个:{"appId":"8940","params":"{\"_input_charset\":\"UTF8\",\"_output_charset\":\"UTF8\",\"bottom\":\"261\",\"clickItems\":\"779857323898,678777490484,640197392379,541717205921,659474032017,732772561927,732772561927,732772561927,639025591346\",\"contentIds\":\"video:488837241901_670839932452\",\"dyS\":\"3\",\"editionCode\":\"CN\",\"elderHome\":\"false\",\"grayHair\":\"false\",\"itemExpTypes\":\"m,m,m,m,m,m,m,m,m,m\",\"itemId\":\"639025591346\",\"itemIds\":\"679905470444,782496187482,661980106144,776340080719,839789892146,670502103361,790808104867,672474691472,652860213124,806194105526\",\"itemS\":\"120\",\"jarvisFeatures\":\"{\\\"edgeModelScoreDeep\\\":0,\\\"scoreSrc\\\":\\\"deep_v1\\\"}\",\"jarvisStatus\":\"ok\",\"jarvis_dynamic_card\":\"false\",\"m\":\"dynamicCard\",\"max_page\":\"13\",\"nearbyItems\":\"665311820520,698112544499,680190532805,644195262705,659474032017,654595067012,739295282376,742817986032,639025591346,732772561927,780611333109,646346070174,770347672571,726414610080,683204429544,666163490665\",\"nextItemsType\":\"ms_tb-webb-widget_tbs_widget_m3,ms_tb-webb-widget_tbs_widget_m3\",\"p4pS\":\"16\",\"page\":\"12\",\"pagePos\":\"3\",\"pic_path\":\"https://picasso.alicdn.com/imgextra/6dded6/O1CNA1Pimgrender6dded6O1CN01cCuPPY1ipBqjYao1W_!!0-item_pic.jpg?backup_url=O1CN01cCuPPY1ipBqjYao1W_!!0-item_pic.jpg&p_context=eyJiaXoiOiJzZWFyY2hNdXRpQ29sb3IiLCJjaGFubmVsIjoid3NlYXJjaGljb24taXRlbSIsIml0ZW1JZCI6IjYzOTAyNTU5MTM0NiIsInBpY1R5cGUiOiJwMjMiLCJyZW5kZXJDb25kaXRpb24iOnt9LCJyZW5kZXJEYXRhIjp7ImNvbG9yMSI6Imh0dHBzOi8vaW1nLmFsaWNkbi5jb20vaW1nZXh0cmEvTzFDTjAxa25FaWhLMkdCV0JtN2RjM29fISEyNDc3Mzc4OTc3LTItZmFpYWxnby5wbmciLCJzdWJtYWpvcm9iamVjdCI6Imh0dHBzOi8vZ3cuYWxpY2RuLmNvbS9pbWdleHRyYS9PMUNOMDFjQ3VQUFkxaXBCcWpZYW8xV18hITAtaXRlbV9waWMuanBnIiwiY29sb3IyIjoiaHR0cHM6Ly9pbWcuYWxpY2RuLmNvbS9pbWdleHRyYS9PMUNOMDF2NUloRWgyR0JXQm1ld1RKcV8hITI0NzczNzg5NzctMi1mYWlhbGdvLnBuZyIsImNvbG9yMyI6Imh0dHBzOi8vaW1nLmFsaWNkbi5jb20vaW1nZXh0cmEvTzFDTjAxTDdoOUtDMkdCV0Joc2JtcW9fISEyNDc3Mzc4OTc3LTItZmFpYWxnby5wbmcifX0-&sign=6dded625bc2e787b78133a766a9ebfc8&v=3.0\",\"pos\":\"152\",\"rn\":\"ebe7a2ac90fa876ace828e019b920dd5\",\"screenHeight\":\"497\",\"sessionId\":\"ca0d4f7f0b58a4d60b6c9c0fb49e47e0\",\"sessionid\":\"de2e37753172bcc167ced61a9f4f0c69\",\"style\":\"wf\",\"sversion\":\"21.6\",\"traceInfo\":\"query:%E7%89%9B%E4%BB%94%E8%A3%A4%E8%9C%9C%E6%A1%83%E8%87%80;nid:639025591346;cat_id:162205;seller_id:912834461;seller_type:0;src:mainse;recType:10;rn:ebe7a2ac90fa876ace828e019b920dd5;c_flag:true;client:android;sp_rank_features:uc%3A0.0033244192600250244%3Bul%3A0.0%3Buw%3A0.0032731294631958008%3Bac%3A-1.98142576E8%3Bvb%3A0.09653529524803162%3Bre%3A1000.0%3Bvp%3A146.66000366210938%3Brn%3A2.0%3Bvu%3A0.005159586668014526%3Bxf%3A0.004703770391643047%3Bxg%3A0.003904171986505389;wlsort:24;price:146;sort:_coefp;tpp_bucket:53;catepgoryp:162205 16 0;sumtips:bsl_165;gray:0;grayBucket:12;xQztAd:0;servicePlanCode:main_search;srp:MainSrp\",\"ttid\":\"703304@taobao_android_10.39.10\",\"utd_id\":\"ZwzvF2Swb/gDAK2RdMwOnx2v\",\"vm\":\"nw\"}"}
+       第二个:{"appId":"8940","params":"{\"_input_charset\":\"UTF8\",\"_output_charset\":\"UTF8\",\"bottom\":\"560\",\"clickItems\":\"779857323898,678777490484,640197392379,541717205921,659474032017,732772561927,732772561927,732772561927,639025591346,839789892146\",\"contentIds\":\"video:488837241901_670839932452\",\"dyS\":\"3\",\"editionCode\":\"CN\",\"elderHome\":\"false\",\"grayHair\":\"false\",\"itemExpTypes\":\"m,m,m,m,m,m,m,m,m,m\",\"itemId\":\"839789892146\",\"itemIds\":\"679905470444,782496187482,661980106144,776340080719,839789892146,670502103361,790808104867,672474691472,652860213124,806194105526\",\"itemS\":\"120\",\"jarvisFeatures\":\"{\\\"edgeModelScoreDeep\\\":0,\\\"scoreSrc\\\":\\\"deep_v1\\\"}\",\"jarvisStatus\":\"ok\",\"jarvis_dynamic_card\":\"false\",\"m\":\"dynamicCard\",\"max_page\":\"13\",\"nearbyItems\":\"770347672571,726414610080,683204429544,666163490665,679905470444,782496187482,661980106144,776340080719,839789892146,670502103361,790808104867,672474691472,652860213124,806194105526\",\"nextItemsType\":\"ms_tb-webb-widget_tbs_widget_m3,ms_tb-webb-widget_tbs_widget_m3\",\"p4pS\":\"16\",\"page\":\"13\",\"pagePos\":\"5\",\"pic_path\":\"http://g.search1.alicdn.com/img/bao/uploaded/i4/i4/2207475130563/O1CN01kBT3CP1G1tyobRiFQ_!!0-item_pic.jpg\",\"pos\":\"166\",\"rn\":\"5be71f569eae8fe9a20a46ae744815dd\",\"screenHeight\":\"530\",\"sessionId\":\"ca0d4f7f0b58a4d60b6c9c0fb49e47e0\",\"sessionid\":\"de2e37753172bcc167ced61a9f4f0c69\",\"style\":\"wf\",\"sversion\":\"21.6\",\"traceInfo\":\"query:%E7%89%9B%E4%BB%94%E8%A3%A4%E8%9C%9C%E6%A1%83%E8%87%80;nid:839789892146;cat_id:201976604;seller_id:2207475130563;seller_type:1;src:mainse;recType:10;rn:5be71f569eae8fe9a20a46ae744815dd;c_flag:true;client:android;sp_rank_features:uc%3A0.005752533674240112%3Bul%3A0.0%3Buw%3A0.02660706639289856%3Bac%3A-1.4047703E7%3Bvb%3A0.1678997278213501%3Bre%3A1000.0%3Bvp%3A55.11000061035156%3Brn%3A2.0%3Bvu%3A0.006438106298446655%3Bxf%3A0.02381071075797081%3Bxg%3A0.006153871770948172;wlsort:24;price:146;sort:_coefp;tpp_bucket:53;catepgoryp:201976604 201984101 16 0;sumtips:bsl_165;gray:0;grayBucket:12;xQztAd:0;servicePlanCode:main_search;srp:MainSrp\",\"ttid\":\"703304@taobao_android_10.39.10\",\"utd_id\":\"ZwzvF2Swb/gDAK2RdMwOnx2v\",\"vm\":\"nw\"}"}
+        进入详情页面时主动调用 headers中:x-page-name	com.taobao.android.detail.alittdetail.TTDetailActivity
+       第三个:{"appId":"35522","params":"{\"area\":\"detail_hintq_new\",\"itemId\":\"830286384728\",\"nick\":\"锋鸿志远\",\"ttid\":\"703304@taobao_android_10.39.10\",\"userId\":\"574901677\",\"utdid\":\"ZwzvF2Swb/gDAK2RdMwOnx2v\"}"}
+       第四个:{"appId":"35522","params":"{\"area\":\"detail_hintq_new\",\"itemId\":\"666286230288\",\"nick\":\"锋鸿志远\",\"ttid\":\"703304@taobao_android_10.39.10\",\"userId\":\"574901677\",\"utdid\":\"ZwzvF2Swb/gDAK2RdMwOnx2v\"}"}
+Response:{
+	"api": "mtop.relationrecommend.wirelessrecommend.recommend",
+	"data": {
+		"result": [],
+		"pvid": "baa49f4d-b380-4aab-8779-2c3801c9077d",
+		"templates": [],
+		"scm": "1007.18940.261116.0",
+		"version": 1.0,
+		"tpp_trace": "215043f717301127169166428e11cf",
+		"tpp_buckets": "8940#0#261116#80_8940#66#238#980_8940#67#349#288"
+	},
+	"ret": ["SUCCESS::调用成功"],
+	"v": "2.0"
+}
+
+第二个:
+{
+	"api": "mtop.relationrecommend.wirelessrecommend.recommend",
+	"data": {
+		"result": [],
+		"pvid": "da461d3a-937f-4e1b-9565-4a1ba0fe2d26",
+		"templates": [],
+		"scm": "1007.18940.261116.0",
+		"version": 1.0,
+		"tpp_trace": "2147827f17301133044956626e61cf",
+		"tpp_buckets": "8940#0#261116#80_8940#66#238#980_8940#67#349#288"
+	},
+	"ret": ["SUCCESS::调用成功"],
+	"v": "2.0"
+}
+第三个:
+{
+	"api": "mtop.relationrecommend.wirelessrecommend.recommend",
+	"data": {
+		"result": ["ok"],
+		"suggest_rn": "bucketid_33-rn_126FA4A551A0865C5F7C189FCC440D9A",
+		"searchInfo": {
+			"searchtext": "掐腰丰胯牛仔裤",
+			"utParams": "{\"queryParams\":{\"hintq\":\"掐腰丰胯牛仔裤\",\"suggest_rn\":\"bucketid_33-rn_126FA4A551A0865C5F7C189FCC440D9A\"}}",
+			"url": "https://s.m.taobao.com/h5entry?g_channelSrp=detail&placeholder=掐腰丰胯牛仔裤&g_historyOn=true&g_csearchdoor_spm=a2141.13130650&launchMode=android_new_task&hint_suggest_rn=bucketid_33-rn_126FA4A551A0865C5F7C189FCC440D9A&targetItemId=613310120872"
+		},
+		"searchInfoList": {
+			"utParams": "{\"queryParams\":{\"hintq\":\"掐腰丰胯牛仔裤\",\"suggest_rn\":\"bucketid_33-rn_126FA4A551A0865C5F7C189FCC440D9A\"}}",
+			"searchtextList": ["掐腰丰胯牛仔裤"],
+			"url": "https://s.m.taobao.com/h5entry?g_channelSrp=detail&placeholder=掐腰丰胯牛仔裤&g_historyOn=true&g_csearchdoor_spm=a2141.13130650&launchMode=android_new_task&hint_suggest_rn=bucketid_33-rn_126FA4A551A0865C5F7C189FCC440D9A&targetItemId=613310120872"
+		},
+		"pvid": "eafaba34-f873-470f-bf8c-d60a677a1a73",
+		"scm": "1007.45522.397431.0",
+		"version": 1.0,
+		"tpp_trace": "2147bfb517301191179555914e7c8e",
+		"tpp_buckets": "35522#0#397431#3_35522#5605#26083#910_35522#25500#500005#552_35522#7989#428412#15_35522#16479#470868#4_35522#22958#470688#746_35522#3150#9935#79_35522#76#97852#162_35522#29712#487367#874_35522#28349#676002#866_35522#21716#468613#551_35522#37057#493309#560_35522#6031#28905#330_35522#27690#483046#586_35522#7962#428312#511_35522#25195#488025#522_35522#29599#487045#239_35522#3163#9972#479_35522#29768#495225#14_35522#25400#586619#67_35522#25248#493308#569_35522#4536#21045#751_35522#4976#22862#69_35522#867#3195#734_35522#11325#442072#83_35522#33180#234001#20_35522#4387#20272#269_35522#5994#28408#265_35522#22930#470512#438_35522#3454#444655#42_35522#24116#233008#256_35522#25481#478013#638_35522#79#277#244_35522#3219#10282#114_35522#5559#25829#305_35522#1873#4567#525_35522#92#354#3_35522#27836#483556#33_35522#931#3446#934_35522#417#20230#95_35522#21736#468684#523_35522#9042#437125#516_35522#6091#29002#8_35522#41043#496806#496_35522#2171#5545#954_35522#26782#480896#372_35522#27855#483701#29"
+	},
+	"ret": ["SUCCESS::调用成功"],
+	"v": "2.0"
+}
+
+
+[搜索输入内容时访问]
+Request HOST:{"appId":"10650","params":"{\"_input_charset\":\"UTF8\",\"_output_charset\":\"UTF8\",\"area\":\"wireless_gbdt_newoutput\",\"bxFeature\":\"{\\\"TT\\\":1,\\\"data\\\":[[\\\"tb_bc_item_click_vstr\\\",\\\"itemId|cTime|cart|skuCart|collect|buy|skuBuy|stayDur|spm-url\\\",\\\"666286230288|1730124117016||||||50427|a2141.7631564.ShopItem#710440100392|1730124215312||||||5871|a2141.7631564.ShopItem#696764507335|1730123804011||||||76964|a2141.7631557.itemlist.3#843514897222|1730124242122||||||102258|a2141.7631557.itemlist.7#838916368838|1730124352600||||||133609|a2141.7631557.itemlist.9\\\"],[\\\"tb_bc_query_sug_vstr\\\",\\\"prefix|time|suggestRN|queryList|clkQuery\\\",\\\"牛仔裤蜜桃臀|1730124487940|a5a22742-b6c8-477c-a449-1cef2cc2d1a7|高腰蜜桃臀牛仔裤,紧身牛仔裤蜜桃臀,牛仔裤蜜桃臀微喇,蜜桃臀牛仔裤开裆,蜜桃臀牛仔裤秋冬|#牛仔裤蜜桃|1730124500318|bf7fd37a-d475-4a78-94dc-904e2602b8c7|牛仔裤蜜桃臀微喇,蜜桃臀高腰牛仔裤,牛仔裤蜜桃臀,紧身牛仔裤蜜桃臀,牛仔裤蜜桃臀小脚|#牛仔裤蜜|1730124501310|782647a4-1cf2-4ac1-b747-000fff24c6b5|牛仔裤蜜桃臀,牛仔裤蜜桃臀微喇,牛仔裤蜜桃臀低腰,牛仔裤蜜桃臀小脚,牛仔裤蜜桃臀短裤|#牛仔裤|1730124502697|28c85e0e-7262-4983-970a-7f2f49c17f28|牛仔裤修身小脚,牛仔裤女紧身,牛仔裤女小脚裤,牛仔裤女秋冬款加绒|#牛仔|1730124506676|ece62d3a-6014-4107-8c87-ac694a2bce58|牛仔裤修身小脚,牛仔裤蜜桃臀,牛仔瑜伽裤,牛仔喇叭裤,牛仔铅笔裤|\\\"]],\\\"fetchTime\\\":1730124624378}\",\"code\":\"utf-8\",\"editionCode\":\"CN\",\"elderHome\":\"false\",\"globalLbs\":\"{\\\"biz_common\\\":{\\\"recommendedAddress\\\":{\\\"area\\\":\\\"成华区\\\",\\\"areaDivisionCode\\\":\\\"510108\\\",\\\"city\\\":\\\"成都市\\\",\\\"cityDivisionCode\\\":\\\"510100\\\",\\\"detailText\\\":\\\"蓝天多元智能幼儿园\\\",\\\"lat\\\":\\\"30.697662\\\",\\\"lng\\\":\\\"104.184410\\\",\\\"province\\\":\\\"四川省\\\",\\\"provinceDivisionCode\\\":\\\"510000\\\",\\\"town\\\":\\\"龙潭街道\\\",\\\"townDivisionCode\\\":\\\"510108016\\\",\\\"type\\\":\\\"location\\\"}},\\\"eleme\\\":{\\\"storeInfos\\\":[{}]},\\\"meeting_place\\\":{},\\\"same_city_buy\\\":{},\\\"tb_search_b2c\\\":{\\\"recommendedAddress\\\":{\\\"addressId\\\":\\\"12204381200\\\",\\\"area\\\":\\\"成华区\\\",\\\"areaDivisionCode\\\":\\\"510108\\\",\\\"city\\\":\\\"成都市\\\",\\\"cityDivisionCode\\\":\\\"510100\\\",\\\"detailText\\\":\\\"华实路13号 保利林语溪二期\\\",\\\"lat\\\":\\\"30.697837\\\",\\\"lng\\\":\\\"104.185644\\\",\\\"province\\\":\\\"四川省\\\",\\\"provinceDivisionCode\\\":\\\"510000\\\",\\\"town\\\":\\\"龙潭街道\\\",\\\"townDivisionCode\\\":\\\"510108016\\\",\\\"type\\\":\\\"deliver\\\"}},\\\"txd\\\":{\\\"storeInfos\\\":[{},{},{},{},{},{},{},{},{},{}]}}\",\"goodPriceVersion\":\"false\",\"grayHair\":\"false\",\"isBeta\":\"false\",\"lastQ\":\"牛仔裤蜜桃臀\",\"q\":\"牛仔裤\",\"searchBoxShowType\":\"UOne\",\"searchDoorFrom\":\"srp\",\"searchElderHomeOpen\":\"false\",\"searchdoorFrom\":\"srp\",\"sessionId\":\"c5e2094f-9aaa-42cb-b70e-137dec245434\",\"src\":\"c2c\",\"sversion\":\"21.6\",\"tab\":\"all\",\"ttid\":\"703304@taobao_android_10.39.10\",\"utd_id\":\"ZwzvF2Swb/gDAK2RdMwOnx2v\"}"}
+             {"appId":"10650","params":"{\"_input_charset\":\"UTF8\",\"_output_charset\":\"UTF8\",\"area\":\"wireless_gbdt_newoutput\",\"bxFeature\":\"{\\\"TT\\\":1,\\\"data\\\":[[\\\"tb_bc_item_click_vstr\\\",\\\"itemId|cTime|cart|skuCart|collect|buy|skuBuy|stayDur|spm-url\\\",\\\"666286230288|1730124117016||||||50427|a2141.7631564.ShopItem#710440100392|1730124215312||||||5871|a2141.7631564.ShopItem#696764507335|1730123804011||||||76964|a2141.7631557.itemlist.3#843514897222|1730124242122||||||102258|a2141.7631557.itemlist.7#838916368838|1730124352600||||||133609|a2141.7631557.itemlist.9\\\"],[\\\"tb_bc_query_sug_vstr\\\",\\\"prefix|time|suggestRN|queryList|clkQuery\\\",\\\"牛仔裤蜜|1730124501310|782647a4-1cf2-4ac1-b747-000fff24c6b5|牛仔裤蜜桃臀,牛仔裤蜜桃臀微喇,牛仔裤蜜桃臀低腰,牛仔裤蜜桃臀小脚,牛仔裤蜜桃臀短裤|#牛仔裤|1730124502697|28c85e0e-7262-4983-970a-7f2f49c17f28|牛仔裤修身小脚,牛仔裤女紧身,牛仔裤女小脚裤,牛仔裤女秋冬款加绒|#牛仔|1730124506676|ece62d3a-6014-4107-8c87-ac694a2bce58|牛仔裤修身小脚,牛仔裤蜜桃臀,牛仔瑜伽裤,牛仔喇叭裤,牛仔铅笔裤|#牛仔裤|1730124623047|ecc3871c-72fb-4845-8314-f6908008e5cf|牛仔裤修身小脚,牛仔裤女紧身,牛仔裤女小脚裤|#牛仔|1730124828927|d7680e00-a5ef-4c51-9d62-1dbf5420afba|牛仔裤修身小脚,牛仔喇叭裤,牛仔铅笔裤,牛仔瑜伽裤,牛仔裤蜜桃臀|\\\"]],\\\"fetchTime\\\":1730124863733}\",\"code\":\"utf-8\",\"editionCode\":\"CN\",\"elderHome\":\"false\",\"globalLbs\":\"{\\\"biz_common\\\":{\\\"recommendedAddress\\\":{\\\"area\\\":\\\"成华区\\\",\\\"areaDivisionCode\\\":\\\"510108\\\",\\\"city\\\":\\\"成都市\\\",\\\"cityDivisionCode\\\":\\\"510100\\\",\\\"detailText\\\":\\\"蓝天多元智能幼儿园\\\",\\\"lat\\\":\\\"30.697662\\\",\\\"lng\\\":\\\"104.184410\\\",\\\"province\\\":\\\"四川省\\\",\\\"provinceDivisionCode\\\":\\\"510000\\\",\\\"town\\\":\\\"龙潭街道\\\",\\\"townDivisionCode\\\":\\\"510108016\\\",\\\"type\\\":\\\"location\\\"}},\\\"eleme\\\":{\\\"storeInfos\\\":[{}]},\\\"meeting_place\\\":{},\\\"same_city_buy\\\":{},\\\"tb_search_b2c\\\":{\\\"recommendedAddress\\\":{\\\"addressId\\\":\\\"12204381200\\\",\\\"area\\\":\\\"成华区\\\",\\\"areaDivisionCode\\\":\\\"510108\\\",\\\"city\\\":\\\"成都市\\\",\\\"cityDivisionCode\\\":\\\"510100\\\",\\\"detailText\\\":\\\"华实路13号 保利林语溪二期\\\",\\\"lat\\\":\\\"30.697837\\\",\\\"lng\\\":\\\"104.185644\\\",\\\"province\\\":\\\"四川省\\\",\\\"provinceDivisionCode\\\":\\\"510000\\\",\\\"town\\\":\\\"龙潭街道\\\",\\\"townDivisionCode\\\":\\\"510108016\\\",\\\"type\\\":\\\"deliver\\\"}},\\\"txd\\\":{\\\"storeInfos\\\":[{},{},{},{},{},{},{},{},{},{}]}}\",\"goodPriceVersion\":\"false\",\"grayHair\":\"false\",\"isBeta\":\"false\",\"lastQ\":\"牛仔裤蜜桃臀\",\"q\":\"牛仔裤\",\"searchBoxShowType\":\"UOne\",\"searchDoorFrom\":\"srp\",\"searchElderHomeOpen\":\"false\",\"searchdoorFrom\":\"srp\",\"sessionId\":\"c5e2094f-9aaa-42cb-b70e-137dec245434\",\"src\":\"c2c\",\"sversion\":\"21.6\",\"tab\":\"all\",\"ttid\":\"703304@taobao_android_10.39.10\",\"utd_id\":\"ZwzvF2Swb/gDAK2RdMwOnx2v\"}"}

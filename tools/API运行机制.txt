@@ -1,0 +1,50 @@
+# -- coding: utf-8 -
+"""
+@file       :API运行机制.txt
+@Author     :wooght
+@Date       :2024/09/23 16:38
+"""
+
+[detail]           商品详情:https://trade-acs.m.taobao.com/gw/mtop.taobao.detail.data.get/
+[batchgetdetail]商品详情配套:https://trade-acs.m.taobao.com/gw/mtop.taobao.detail.batchgetdetail/
+        Request POST:需要额外参数:
+            pic_id:O1CN01r9rKe826wZ0GVhgDM_!!736977726
+            sessionid:44abcf1c-06f9-4551-9c6b-8fa90c3de0ef  一段时间不变
+            hybrid_score:2.2581734657287598
+            tpp_buckets:~9~U2wTiccwIayq1UJm2V5fMM9_9hHWdHahNz3KhhxFaRuoT1FtKj2dJB6OdoJ1D2GroH1FfW9deHF1JmrRGd-i41zB9XmvRZ9BsndDrK2Se11F2XcVr31EwgPi2dN_s1_r8exw7xlbdyD2JvbdLU1R3cdP1Nax9ddWCN9ddO2whHtgdV2H9Virex1RhS6jdw2K1QgjdGPcXopdH1WaNm2fXxBmqdA3T6VppdzN51ZbsdN-WgsdNBlL3ee_2Kr-52eH2P2D93eM2ZuX96eJ1N52Qi5eHOTl5eFCJm5ey1ZSu7eL1W11z67eyX2C87ex1WnBr8eJ_1K7aeR2RbA5beYw1Ve9eIY9wgpeO1C6wdaeGZbwqbeX1F4w6beO_9ZpeeMG4_vbe-2_x0ceTHd-7deZ1N1F95f_2xcHudeHG1W3eeY1OfNmfeQ2A2JtfeP2M1V1meEM7wugeWX5UhheZ1Q6K8iex_6RpleZ1CZqpeN2O1XcjeL2V6BqjeTW1XsjeE1zaSnkeRSdK4leEQ2JeleJRbJjmeQ2N4Q6neNz1FoneEJ1UtmeDx-tmeM2F1B2nex2D7B9ne_2GYj0fY1FxgneI2w1wineS1P1GfpeQ2M2DiteX2_1K7oeT1FT9oey1y1MapeK2QMkoeI1S1_roeF1B3-a3fEV8LnreF1y6C5reEZ2Jqvew2xgWf1fx2Fbw2te-2B4wmreT1F2-sreMF4RfseL2P02ZpteX2_51H60fX2ViCcteY2H5GmueEOcF4ueF2WK3ueD2RW5ueRyX5ueRYgGtueBIk1Sd0fI1O1Ci0fw1JoOr4fw3ScVi1fPhO2Eq1fz-mAm2fA2SfN03fN2wdQo4fZ2FU83fxO8Rp3fG1VnIl4fXQcK45fxQlFs5fz2~J691w-iecA
+                一段时间不变
+        Response:结构:
+            itemId:{
+                data:{
+                    apiStack:{}
+                    feature:{}
+                    item:{
+                        itemId,title, h5ItemUrl, tmallDescUrl, categoryId
+                    }
+                }
+            }
+    列表页点击商品,触发[detail][batchgetdetail]
+    详情页点击商品,触发[detail]
+
+
+[category]  列表:https://guide-acs.m.taobao.com/gw/mtop.taobao.wireless.home.category/
+    列表页/下拉列表页加载更多
+
+店铺推荐
+[recommend] 店铺推荐(下拉到店铺推荐位置时):mtop.relationrecommend.wirelessrecommend.recommend
+    POST 提交内容:来之搜索时:{"appId":"10777","flag":"false","params":"{\"detailAlgoParam\":\"%E7%BA%A6%E4%BC%9A%E7%9F%AD%E8%A3%A4%E5%A5%B3\",\"detail_v\":\"3.3.2\",\"from\":\"search\",\"itemId\":\"708864629757\",\"recItemId\":\"\",\"sellerId\":\"2200771971117\",\"spm\":\"a2141.7631557.itemlist.2\",\"xxc\":\"taobaoSearch\"}"}
+                                                                    detailAloParam:'来之搜索时,这里填写搜索内容'
+               来之列表时:{"appId":"10777","flag":"true","params":"{\"detail_v\":\"3.3.2\",\"itemId\":\"730751042853\",\"recItemId\":\"\",\"sellerId\":\"2202046449482\",\"spm\":\"a2141.1.guessitemtab_null.5\"}"}
+               来之店铺推荐点击:{"appId":"35522","params":"{\"area\":\"detail_hintq_new\",\"itemId\":\"751989280597\",\"nick\":\"锋鸿志远\",\"ttid\":\"703304@taobao_android_10.39.10\",\"userId\":\"574901677\",\"utdid\":\"ZwzvF2Swb/gDAK2RdMwOnx2v\"}"}
+
+
+[awesome]   对浏览记录的提交与反馈 mtop.taobao.wireless.home.newface.awesome.get
+
+[getrecomservice]   获取推荐之前访问:https://guide-acs.m.taobao.com/gw/mtop.taobao.detail.getrecomservice/
+    POST:{"detail_v":"3.3.2","from":"recCube","itemId":"708864629757","recomIdFlag":"1","recomStruct":"1","ttid":"2016@taobao_android_7.7.2"}
+    返回内容中:data:recomIdInfo:{smartFlag:True} 表示有推荐,需要访问推荐API
+
+[status.count] 详情第一次下拉时访问:https://guide-acs.m.taobao.com/gw/mtop.taobao.crm.follow.status.count/1.0/
+    POST:{"bizCode":"detail","canRevealCouponText":true,"canRevealGuideText":"","followedIdStr":"2200771971117"}
+
+

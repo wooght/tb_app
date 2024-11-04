@@ -1,0 +1,24 @@
+# -- coding: utf-8 -
+"""
+@file       :follow_status_count.txt
+@Author     :wooght
+@Date       :2024/09/28 18:58
+"""
+
+https://guide-acs.m.taobao.com/gw/mtop.taobao.crm.follow.status.count/
+
+详情页下拉式主动访问:
+Request POST:
+    data:{"bizCode":"detail","canRevealCouponText":true,"canRevealGuideText":"","followedIdStr":"2207475130563"},
+    type:json
+    上面的followedIdStr 应该是详情页的seller_id
+Response:
+{
+	"api": "mtop.taobao.crm.follow.status.count",
+	"data": {
+		"dynamic": "false",
+		"follow": "false"
+	},
+	"ret": ["SUCCESS::调用成功"],
+	"v": "1.0"
+}

@@ -1,0 +1,72 @@
+# -- coding: utf-8 -
+"""
+@file       :newsync.txt
+@Author     :wooght
+@Date       :2024/09/28 17:35
+"""
+
+https://guide-acs.m.taobao.com/gw/mtop.com.taobao.wireless.amp.newsync/1.0/
+
+空闲时主动访问:
+Request POST:
+{"accountType":"3",
+ "dataTypeIdMap":
+    "{\"personalConfigCmd\":4,
+    \"tao_friend\":0,
+    \"imGroupEvent\":0,
+    \"reminder\":0,
+    \"imbaCmd\":0,
+    \"imba_relation\":2,
+    \"bcRelation\":0,
+    \"imCmd\":6,
+    \"imMsg\":0,
+    \"imba\":2236}",
+ "fetchSize":"30",
+ "firstReq":"false",
+ "namespace":"0",
+ "readModeSyncMap":"{}",
+ "sdkVersion":"1",
+ "source":"0"}
+
+Request Headers:
+x-sgext: JBMlwXFy9XMULGyux%2BmhJsEU8RXyEuIX9RH1BvAW9gbiFPYW8RTxFPES8wbxE%2FZD9RfzFKJH%2BUf0EPVB4hTyE%2BIQ4hXxBvEV8RLiFuIU4hTiFOIU4hbiF%2BIV4hfzBvIG8QbxBvEG8QbxBvEG8QbiQOIV4hXiQ%2FZD%2BBX2BvEV8RXxBvEG9Bz1BvEG4hbiFOIW4hXiX4JX9gbxBuEF9hbhBeEV4hWeZKZQkG%2B2ZIVkgx2AbbZk%2FHr3evAD8wPyA%2FYD%2BAOiA6UD8BXnFPd6%2BHrwCPEInkSeF%2BcRnkeeHfUI8Aj1HewW7BTxeqV6lHOPd5cUj3eUFIQYnkCeZ6ZkgGSRdINkgGSHZIBkgByAYIBkgBj8eqd68gjxCPQW8gj1F%2BwW9BCeFPF6kHCnTZBoo2qmfPNygGSAZIBkgGSAZKhQk1CXXJhtpnCDEZFkrnWAZIBkgFambrZVqka1ZJ4U8HrxA%2FEL%2BBL5FvYc5xfyA%2FED8xfnEfgD8xbnFecX%2BQPwFvED8BXyA%2FAR5xWeFPN68gjwFewc%2BBCeFPJ6gE%2BQZPV0gAqAbqJkjlKGaYBntmSAZIBLgGaEZJ4U93rwevASnhTsFewV7BTwCPMW7BXsFewX8wjzFuwW8HrwQJ4U8B3sFPAd7BPsF54Up3qAdIRkgGSAGJ4X8HrxevMXnhbsFZ4%3D
+x-social-attr: 3
+x-sign: azYBCM007xAAMa%2BPJzzeHucl9aFnEa%2BBrEK%2BV9gfYKj0bo%2BcYpUcTDXoH6iCo2wu7BT%2FdD5sv6VEO4vFDMubjfY9%2BRbPga%2BBriGvga
+x-sid: 109ff1b5036c404c5f8343f4fb713467
+x-uid: 574901677
+x-nettype: WIFI
+Accept-Encoding: zstd, gzip
+x-pv: 6.3
+x-nq: WIFI
+x-region-channel: CN
+x-features: 27
+x-app-edition: UN
+x-app-conf-v: 0
+x-mini-wua: amQRKPvOXjHy3%2B8g1SMJ2cOH42NVncpRnu2oRYgtfL9ZVP42RKoumV7d6lEbrwenfPyNn6ceVw3qQHSMcEZh8%2BKNZ%2Byy34M3I4t9RqjOrBHeJrDmYOJVf3UAPKzGKZTxAiQc8l44CWRvD%2B0fKH7L6Tsws%2FTTUSxpw9O7%2BQSK20DjfXf9FqnnVP2b86kRoYfIAM%2BM%3D
+content-type: application/x-www-form-urlencoded;charset=UTF-8
+Content-Length: 537
+x-t: 1730108168
+Content-Type: application/x-www-form-urlencoded;charset=UTF-8
+Cookie: unb=574901677; sn=; uc3=lg2=URm48syIIVrSKA%3D%3D&id2=Vvlz%2Bu1Ymfq1&nk2=1CHkhVQrjAs%3D&vt3=F8dD37r%2BvGNdWvVGoC4%3D; uc1=existShop=false&cookie14=UoYcComkef3oMw%3D%3D&cookie15=VFC%2FuZ9ayeYq2g%3D%3D&cookie21=UIHiLt3xSilUk8HepGtDjw%3D%3D; csg=33e990d0; lgc=%5Cu950B%5Cu9E3F%5Cu5FD7%5Cu8FDC; cancelledSubSites=empty; t=e3fe3b2ab4e743d65d244ccdda98f922; cookie17=Vvlz%2Bu1Ymfq1; dnk=%5Cu950B%5Cu9E3F%5Cu5FD7%5Cu8FDC; skt=b39aa80964bc92d9; munb=574901677; cookie2=109ff1b5036c404c5f8343f4fb713467; uc4=id4=0%40VH979XLSJt40Bzl%2BhWi9z%2BOxvdU%3D&nk4=0%401vD1OWc4oJa4n9ZW5OUCp7FeYg%3D%3D; tracknick=%5Cu950B%5Cu9E3F%5Cu5FD7%5Cu8FDC; _cc_=Vq8l%2BKCLiw%3D%3D; ti=703304%40taobao_android_10.39.10; sg=%E8%BF%9C7b; _l_g_=Ug%3D%3D; _nk_=%5Cu950B%5Cu9E3F%5Cu5FD7%5Cu8FDC; cookie1=W5xkqkwhTKXRpUdAUvMHyxVmJCYpWWD%2FerUK5DpLAvA%3D; _tb_token_=3351f0346ba7e; sgcookie=W100R1DJ7nIdeolkeHGGRMnwaMTw0ntNh3Qv16Evh4kldz3%2FtDcQpsES5t67AJ255UfUUwiTy0nN5eYQrSGfKw6paFW2vroTCuhPJjhpZxE79MGa5GuKeDexeMnZitUtKRdM; imewweoriw=36ha3LlTgOnZO%2BeOR8AZpyBmfehRiMVB%2BMHT4arHILc%3D; WAPFDFDTGFG=%2B4cMKKP%2B8PI%2BtRy0bsb%2FF%2BK4ZtGV9BA%3D; _w_tb_nick=%E9%94%8B%E9%B8%BF%E5%BF%97%E8%BF%9C; ockeqeudmj=ufOfnXQ%3D; thw=cn; cna=dh+kH4FoeTcCAavVBK7J06wF; enc=SKzMpmVYvJSfykZiA4g20cZ6pQeOxw2XVfqJ6NSCl0FkhW8BK7heRCL7Jm8SxY6p4bGOWTeEcjNty9rittNqGg%3D%3D; tfstk=fv5ZbVjFjMTySIXDYHO2zad4Fvw9gQE7mstXoZbD5hxMcKO2ugtUW1t1osWFyi-_kRd1LnShYhxG1fsFgaIpcKxbBiJVcMpcGPKXgSSpArU9cl3q0g_lGO1Vkj8coiU9cPeCJNdviuZ7P7_OWm0XsMrBirbhqK6FT7N5WN06Sz_3N116xUKDmIDMnX4elEADSnjDxpYkPcADiib38E8ymjDMSBAHWERxPsfz4FpgPrTEG80v-d-l7-lmg6lWQ3bMYj2FTFPvqNxEijt6qhdfkirZwFf27_R1izNCINbFFp5Yv7pNrEvftpyqqHXP51pPigzsDexQEsCYMxvMJe-78y4j06iOwTnd-xHvCyLeVyDoHxpMJe-78ykxHdOp83anE; isg=BAoK46nhWViD29X09cOfsW8zUPKs-45V4XFULZRDtt3oR6oBfIveZVC1U7Wbjgbt
+x-bx-version: 6.6.241003
+f-refer: mtop
+x-extdata: openappkey%3DDEFAULT_AUTH
+x-ttid: 703304%40taobao_android_10.39.10
+x-app-ver: 10.39.10
+x-c-traceid: 04iEHZuS
+a-orange-dq: appKey=21646297&appVersion=10.39.10&clientAppIndexVersion=1120241028171901009
+x-regid: reg0rqrxZC8uskOHWKQ7lFQ50BKoclSw
+x-umt: vvIB3NFLPNmmmwKS0iw69DlVD1ke0QJO
+x-utdid: ZwzvF2Swb%2FgDAK2RdMwOnx2v
+c-launch-info: 3,0,1730108168525,1730101144510,2
+x-appkey: 21646297
+x-falco-id: 04iEHZuS
+x-page-url: http%3A%2F%2Fs.m.taobao.com%2Fsearch.htm
+x-page-name: com.taobao.search.sf.MainSearchResultActivity
+x-devid: iaKizkqCCrev0yDpTYK2hSznaaVyo5lvZYHqS-KB4IbOWRbxflV3gF0bpyOQnLFD
+user-agent: MTOPSDK%2F3.1.1.7+%28Android%3B12%3BXiaomi%3B2206122SC%29+DeviceType%28Phone%29
+Host: guide-acs.m.taobao.com
+Connection: Keep-Alive
+
+Response: [ api=mtop.com.taobao.wireless.amp.newsync,v=1.0,retCode=null,retMsg=null,mappingCode=null,mappingCodeSuffix=null,ret=null,data=null,responseCode=200,headerFields={null=[HTTP/1.1 200 OK], s_tid=[2147802b17301081668968914ee393], X-Switch-Unit=[center], Server=[Tengine/Aserver], x-node=[d6aaaad4b6499d47f9ea88e6e3341408], s_ip=[457079564a49497a6234665438483848], MTOP-x-provider=[31c2a26819ee8adf1ad4c376f4f89b0533f26a1a4f356a1e54705a4f33e4de5a28a6340287abc5bcfaca2313acd6da18], X-Android-Received-Millis=[1730108168818], x-bin-length=[355], s_tag=[4398047068160|137438953472^0|^taoMainUser:574901677:21646297^taoMainUser#32768|0], a-orange-dp=[resourceId%3Dimcab73b242b9c49f88b68b1bdab97d841-1.json%26md5%3Db2c73b68a27ad1fd8f9596ee26e56346%26cdn%3Ddorangesource.alicdn.com%26protocol%3Dhttps%26baseVersion%3D1120241028171200789], X-Android-Selected-Protocol=[http/1.1], EagleEye-TraceId=[2147802b17301081668968914ee393], s_group=[tao-session], s_status=[STATUS_NORMAL], X-Android-Sent-Millis=[1730108168688], Content-Length=[363], Content-Type=[application/json;charset=UTF-8], X-Powered-By=[m.taobao.com], s-brt=[86], s_read_unit=[[CN:CENTER]], x-retcode=[SUCCESS], x-eagleeye-id=[2147802b17301081668968914ee393], Connection=[close], s-rt=[88], Pragma=[no-cache], s_v=[4.0.4.6], Date=[Mon, 28 Oct 2024 09:36:06 GMT], x-protocol=[https], Cache-Control=[no-cache], X-Android-Response-Source=[NETWORK 200], Vary=[Accept-Encoding], s_ucode=[CN:CENTER]},
+            bytedata={"api":"mtop.com.taobao.wireless.amp.newsync","data":{"accountId":"574901677","accountType":3,"namespace":0,"readBizMap":{},"syncDataStatusMap":{"imba":-1,"imba_relation":-1,"personalConfigCmd":-1,"reminder":-1,"tao_friend":-1,"imMsg":-1,"imbaCmd":-1,"imCmd":-1,"imGroupEvent":-1,"bcRelation":-1},"syncDataValuesMap":{}},"ret":["SUCCESS::调用成功"],"v":"1.0"}]
