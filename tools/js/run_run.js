@@ -109,12 +109,12 @@ Java.perform(function () {
     // var ClassName=Java.use("com.luoye.test.ClassName");
     // var instance = ClassName.$new();
 
-    // var SwitchConfig = Java.use('mtopsdk.mtop.global.SwitchConfig');
-    // SwitchConfig.isGlobalSpdySwitchOpen.overload().implementation = function () {
-    //     // var ret = this.isGlobalSpdySwitchOpen.apply(this, arguments);
-    //     // console.log('start:' + ret)
-    //     return false;
-    // };
+    var SwitchConfig = Java.use('mtopsdk.mtop.global.SwitchConfig');
+    SwitchConfig.isGlobalSpdySwitchOpen.overload().implementation = function () {
+        // var ret = this.isGlobalSpdySwitchOpen.apply(this, arguments);
+        // console.log('start:' + ret)
+        return false;
+    };
 
     /**
      * hashMap 初始化
@@ -202,17 +202,23 @@ Java.perform(function () {
      * @param {*} s 
      * @returns 
      */
-    var extract_sign = function(txt, now_time, s){
+    var extract_sign = function(hm_structure, hashMap_data, now_time, s){
         if(is_set_hm){
-            console.log('call here')
-            hhmm.remove('data')
-            hhmm.put('data', txt)       // 设置当前请求内容
-            hhmm.remove('t')            
-            hhmm.put('t', now_time)     // 设置当前请求时间
+            console.log('CALL EXTRACT_SIGN......')
+            var hm = MapH.$new()                    // hashMap native
+            var hm_json = JSON.parse(hm_structure)  // hashMap json
+            Object.entries(hm_structure).forEach(function([key, val]){
+                hm.put(key, val)
+            })
+            hm.remove('data')
+            hm.put('data', hashMap_data)       // 设置当前请求内容
+            hm.remove('t')            
+            hm.put('t', now_time)     // 设置当前请求时间
             st3 = s
-            var sign_result = call_new_sign(hhmm, hhmm2, st, st2 ,zz, st3)
+            var sign_result = call_new_sign(hm, hhmm2, st, st2 ,zz, st3)
             var falcoid = get_falcoId()
-            return {'data':`${sign_result}`, 'falcoid':falcoid, 'form_data':hhmm.get('data').toString(), 't':t}
+            console.log(`${sign_result}`)
+            return {'data':`${sign_result}`, 'falcoid':falcoid, 'form_data':hm.get('data').toString(), 't':t}
         }else{
             console.log('false is_set_hm')
             return {'type':'error', 'data':'is_set_hm false'}
@@ -222,8 +228,8 @@ Java.perform(function () {
      * rpc 接口 访问函数接口 
      * */ 
     rpc.exports = {
-        getAppSign:extract_sign,
-        setDetailHm:set_detail_hm
+        setDetailHm:set_detail_hm,
+        getAppSign:extract_sign
     }
 
     // function get_new_map(){
@@ -253,29 +259,36 @@ Java.perform(function () {
     let ryw = Java.use("tb.ryw")
     ryw["a"].overload('java.util.HashMap', 'java.util.HashMap', 'java.lang.String', 'java.lang.String', 'boolean', 'java.lang.String').implementation = function (hashMap, hashMap2, str, str2, z, str3) {
         if(hashMap.get('api') == 'mtop.taobao.wireless.home.category' || hashMap.get('api') == 'mtop.taobao.detail.data.get'){
-            console.log(`run hashMap:${hashMap}, hashMap2=${hashMap2}, str=${str}, str2=${str2}, z=${z}, str3=${str3}`)
+            // console.log(`run hashMap:${hashMap}, hashMap2=${hashMap2}, str=${str}, str2=${str2}, z=${z}, str3=${str3}`)
             if(!is_set_hm){
                 // 复制 appKey
                 // st = str.toString()
                 var hashMap_keys = mapKey(hashMap)
                 console.log(`hashMap_keys${hashMap_keys}`)
+
+                var hm_structure = {}
                 // 复制hashMap  遍历数组
                 hashMap_keys.forEach(function(key){
-                    hhmm.put(key, hashMap.get(key))
-                }) 
-                console.log(`hhmm:${hhmm}`)
+                    // hhmm.put(key, hashMap.get(key))
+                    hm_structure[key] = hashMap.get(key).toString()
+                })
+                hm_structure['data'] = {}
+                console.log(`hhmm:${hm_structure}`)
+
+                var hm2_structure = {}
                 // 复制hashMap2  遍历 字典
                 Object.keys(hm2).forEach(function(key){
-                    hhmm2.put(key, hashMap2.get(key))
+                    // hhmm2.put(key, hashMap2.get(key))
+                    hm2[key] = hashMap2.get(key).toString()
                 })
                 // st3 = str3.toString()
                 is_set_hm = true
-                console.log(`is_set_hm set True${hashMap}, hashMap2=${hashMap2}, str=${str}, str2=${str2}, z=${z}, str3=${str3}`);
-                send({'type':'hashMap_data', 'hashMap_data':`${hashMap}`})
+                console.log(`is_set_hm set True:hashMap=${JSON.stringify(hm_structure)}, hashMap2=${hashMap2}, str=${str}, str2=${str2}, z=${z}, str3=${str3}`);
+                send({'type':'hashMap_data', 'hm_structure':`${JSON.stringify(hm_structure)}`, 'hm2_structure':`${JSON.stringify(hm2_structure)}`, 'hashMap_data':`${hashMap.get('data')}`})
             }
         }
+        // native 运行
         let result = this["a"](hashMap, hashMap2, str, str2, z, str3);
-        result_sign = result.toString()
         return result;
     };
 

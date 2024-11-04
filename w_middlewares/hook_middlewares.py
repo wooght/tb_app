@@ -28,6 +28,8 @@ class HookMiddleWares(object):
     headers = {}            # headers dict
     cookies_t = ''          # cookies 字符串
     cookies = {}            # cookies dict
+    hm_structure = object   # 传递参数hashMap 结构
+    hm2_structure = object  # 传递参数hashMap2 结构
     hashMap_t = ''          # hashmap中data 字符串
     hashMap_data = {}       # 计算签名,以及get,post 提交内容
     called = False          # 是否hook
@@ -55,8 +57,9 @@ class HookMiddleWares(object):
         # self.headers = Ed.get_headers_dict(self.headers_t)
 
         spider_name = sys.argv[1]      # 获取运行的爬虫名称
+        print('SPIDER_NAME:', spider_name)
         # 加载JS, 运行hook
-        self.hook_js = open_file('js/up_sign_params_2.js')
+        self.hook_js = open_file('js/run_run.js')
         self.run_hook()
         # 阻塞等待hook 返回参数
         while not self.called:
@@ -65,7 +68,12 @@ class HookMiddleWares(object):
         # 关闭获取原始Headers的frida会话
         self.close_hook()
         # 开启运行hook
-        self.hook_js = open_file('js/run_category.js') if spider_name == 'taobao_list' else open_file('js/run_detail.js')
+        if str(spider_name) == 'taobao_list':
+            print('加载js:', spider_name)
+            self.hook_js = open_file('js/run_category.js')
+        else:
+            self.hook_js = open_file('js/run_detail.js')
+        # self.hook_js = open_file('js/run_category.js') if str(spider_name) == 'taobao_list' else open_file('js/run_detail.js')
         self.run_hook()
 
 
@@ -198,6 +206,7 @@ class HookMiddleWares(object):
         执行js进行hook函数操作，获取sign等签名
         Parameters
         ----------
+        hm          hashMap structure   hashMap结构
         send_txt    发送字符串
         now_time    现在时间戳
         st3         请求序列 （目前观察可以不变）
@@ -205,7 +214,7 @@ class HookMiddleWares(object):
 
         """
         # script.exports 访问hook js文件函数接口，并得到返回值
-        back_data = self.script.exports.get_app_sign(send_txt, now_time, st3)
+        back_data = self.script.exports.get_app_sign(json.dumps(self.hm_structure), json.dumps(self.hm2_structure) ,send_txt, now_time, st3)
         # 查看back内容
         # print('*'*50)
         # print(back_data)
@@ -264,10 +273,15 @@ class HookMiddleWares(object):
                     self.headers_t = message['payload']['headers']
                     result_d = Ed.get_headers_dict(self.headers_t)
                 elif result_type == 'hashMap_data':
+                    # hashMap 结构
+                    self.hm_structure = json.loads(message['payload']['hm_structure'])
+                    self.hm2_structure = json.loads(message['payload']['hm2_structure'])
+                    # 混淆字段替换
                     self.hashMap_t = message['payload']['hashMap_data'].replace('"id"', '"wooghtid"')     # 将冲突的id替换
                     if 'spm-cnt' in self.hashMap_t:
                         self.hashMap_t = self.hashMap_t.replace('spm-cnt', 'spm_cnt')
                     print('on_message:', self.hashMap_t)
+                    # 提取hashMap中的data
                     result_d = Ed.extract_category_params(self.hashMap_t)
                 self.__setattr__(result_type, result_d)
             print(len(self.hashMap_t), len(self.headers_t), len(self.cookies_t))
